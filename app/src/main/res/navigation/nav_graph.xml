@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/noteFragment">
+
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.example.notesapp.fragments.NoteFragment"
+        android:label="fragment_note"
+        tools:layout="@layout/fragment_note" >
+        <action
+            android:id="@+id/action_noteFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+        <action
+            android:id="@+id/action_noteFragment_to_saveFragment"
+            app:destination="@id/saveFragment" />
+        <action
+            android:id="@+id/action_noteFragment_to_folderFragment"
+            app:destination="@id/folderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveFragment"
+        android:name="com.example.notesapp.fragments.SaveFragment"
+        android:label="fragment_save"
+        tools:layout="@layout/fragment_save" >
+        <action
+            android:id="@+id/action_saveFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
+        <action
+            android:id="@+id/action_saveFragment_to_folderDetailsFragment"
+            app:destination="@id/folderDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.notesapp.fragments.UpdateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_updateFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
+        <action
+            android:id="@+id/action_updateFragment_to_folderDetailsFragment"
+            app:destination="@id/folderDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/folderFragment"
+        android:name="com.example.notesapp.fragments.FolderFragment"
+        android:label="FolderFragment" >
+        <action
+            android:id="@+id/action_folderFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
+        <action
+            android:id="@+id/action_folderFragment_to_folderDetailsFragment"
+            app:destination="@id/folderDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/folderDetailsFragment"
+        android:name="com.example.notesapp.fragments.FolderDetailsFragment"
+        android:label="FolderDetailsFragment" >
+        <action
+            android:id="@+id/action_folderDetailsFragment_to_saveFragment"
+            app:destination="@id/saveFragment" />
+        <action
+            android:id="@+id/action_folderDetailsFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+    </fragment>
+</navigation>
